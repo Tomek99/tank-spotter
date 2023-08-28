@@ -1,0 +1,29 @@
+.NavigationBar {
+  display: flex;
+  justify-content: center;
+  background-color: #242424;
+  padding: 5px 0;
+
+  .logoImg {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  .navElements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    width: 100%;
+
+    .divCenter {
+      display: flex;
+      gap: 20px;
+      text-transform: capitalize;
+    }
+
+    .divRight {
+      display: flex;
+    }
+  }
+}
