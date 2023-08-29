@@ -1,0 +1,40 @@
+.LinkElement {
+  font-size: 22px;
+  text-decoration: none;
+  color: var(--main-white);
+  position: relative;
+  transition: 0.25s linear;
+
+  &:hover {
+    color: var(--main-orange);
+  }
+
+  &::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background: var(--main-orange);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    transition: 0.3s linear;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.activeLinkElement {
+  color: var(--main-orange);
+
+  &::before {
+    content: "";
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    background-color: var(--main-orange);
+  }
+}

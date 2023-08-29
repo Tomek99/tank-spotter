@@ -1,0 +1,11 @@
+.MapItem {
+  max-width: 320px;
+  width: 100%;
+  padding: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0 1px var(--main-orange);
+  }
+}

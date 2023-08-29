@@ -4,12 +4,16 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-family: Roboto, sans-serif;
+  --main-white: #fff;
+  --main-orange: #ffb300;
+  --main-grey: #232323;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  transition: 0.25s linear;
 }
 
 * {

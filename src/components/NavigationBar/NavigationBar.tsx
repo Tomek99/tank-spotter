@@ -1,6 +1,6 @@
 import styles from "./NavigationBar.module.scss";
 import navigationData from "../../data/navigationElements.json";
-import LinkElement from "../LinkElement/LinkElements";
+import NavLinkElement from "../NavLinkElement/NavLinkElements";
 import { FaRegUser } from "react-icons/fa";
 function NavigationBar() {
   return (
@@ -10,7 +10,7 @@ function NavigationBar() {
 
         <div className={styles.divCenter}>
           {navigationData.map((item, i) => (
-            <LinkElement item={item} key={i} />
+            <NavLinkElement item={item} key={i} />
           ))}
         </div>
 

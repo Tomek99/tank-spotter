@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./LinkElement.module.scss";
+import styles from "./NavLinkElement.module.scss";
 interface Item {
   text: string;
   path: string;
@@ -10,7 +10,7 @@ interface LinkElementProps {
   item: Item;
 }
 
-function LinkElement({ item }: LinkElementProps) {
+function NavLinkElement({ item }: LinkElementProps) {
   const { path, text } = item;
   return (
     <NavLink
@@ -28,4 +28,4 @@ function LinkElement({ item }: LinkElementProps) {
   );
 }
 
-export default LinkElement;
+export default NavLinkElement;

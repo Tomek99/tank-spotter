@@ -1,6 +1,6 @@
 [
-  { "text": "maps", "path": "/maps" },
-  { "text": "your location", "path": "/your-location" },
+  { "text": "maps", "path": "/" },
+  { "text": "your locations", "path": "/your-location" },
   { "text": "recomended spots", "path": "/recomended-spots" },
   { "text": "contact", "path": "/contact" }
 ]

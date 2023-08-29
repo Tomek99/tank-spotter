@@ -1,11 +1,19 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { NavigationBar, Footer } from "./components/index";
+import { NavigationBar, Footer, MapsSection } from "./components/index";
 
 function App() {
   return (
     <>
       <NavigationBar />
-      <div>{import.meta.env.VITE_API_URL}</div>
+      <section className="centerSection">
+        <Routes>
+          <Route path="/" element={<MapsSection />} />
+          <Route path="your-location" element={<MapsSection />} />
+          <Route path="recomended-spots" element={<MapsSection />} />
+          <Route path="contact" element={<MapsSection />} />
+        </Routes>
+      </section>
       <Footer />
     </>
   );

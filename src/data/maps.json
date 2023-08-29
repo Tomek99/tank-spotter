@@ -1,0 +1,296 @@
+[
+  {
+    "id": 0,
+    "name": "Abbey",
+    "path": "./maps/abbey.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 1,
+    "name": "Airfield",
+    "path": "./maps/airfield.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 2,
+    "name": "Cliff",
+    "path": "./maps/cliff.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 3,
+    "name": "El Halluf",
+    "path": "./maps/el_halluf.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 4,
+    "name": "Empire's Border",
+    "path": "./maps/empire's border.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 5,
+    "name": "Ensk",
+    "path": "./maps/ensk.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 6,
+    "name": "Erlenberg",
+    "path": "./maps/erlenberb.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 7,
+    "name": "Fisherman's Bay",
+    "path": "./maps/fisherman's bay.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 8,
+    "name": "Fjords",
+    "path": "./maps/fjords.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 9,
+    "name": "Ghost Town",
+    "path": "./maps/ghost town.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 10,
+    "name": "Glacier",
+    "path": "./maps/glacier.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 11,
+    "name": "Highway",
+    "path": "./maps/highway.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 12,
+    "name": "Himmerlsdorf",
+    "path": "./maps/himmerlsdorf.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 13,
+    "name": "Hinterland",
+    "path": "./maps/hinterland.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 14,
+    "name": "Karelia",
+    "path": "./maps/karelia.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 15,
+    "name": "Kharkov",
+    "path": "./maps/kharkov.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 16,
+    "name": "Klndike",
+    "path": "./maps/klndike.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 17,
+    "name": "Kraftwerk",
+    "path": "./maps/kraftwerk.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 18,
+    "name": "Lakeville",
+    "path": "./maps/lakeville.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 19,
+    "name": "Live oaks",
+    "path": "./maps/live oaks.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 20,
+    "name": "Malinovka",
+    "path": "./maps/malinovka.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 21,
+    "name": "Mannerheim line",
+    "path": "./maps/mannerheim line.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 22,
+    "name": "Mines",
+    "path": "./maps/mines.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 23,
+    "name": "Minsk",
+    "path": "./maps/minsk.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 24,
+    "name": "Mountain Pass",
+    "path": "./maps/mountain pass.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 25,
+    "name": "Nebelburg",
+    "path": "./maps/nebelburg.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 26,
+    "name": "Normandie",
+    "path": "./maps/normandie.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 27,
+    "name": "Overlord",
+    "path": "./maps/overlord.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 28,
+    "name": "Paris",
+    "path": "./maps/paris.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 29,
+    "name": "Pilsen",
+    "path": "./maps/pilsen.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 30,
+    "name": "Prokhorvka",
+    "path": "./maps/prokhorvka.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 31,
+    "name": "Province",
+    "path": "./maps/province.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 32,
+    "name": "Redshire",
+    "path": "./maps/redshire.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 33,
+    "name": "Ruinberg",
+    "path": "./maps/ruinberg.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 34,
+    "name": "Sand River",
+    "path": "./maps/sand river.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 35,
+    "name": "Serence Coast",
+    "path": "./maps/serence coast.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 36,
+    "name": "Siegfried Line",
+    "path": "./maps/siegfried line.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 37,
+    "name": "Steppes",
+    "path": "./maps/steppes.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 38,
+    "name": "Studzianki",
+    "path": "./maps/studzianki.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 39,
+    "name": "Tundra",
+    "path": "./maps/tundra.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 40,
+    "name": "Westfield",
+    "path": "./maps/westfield.jpg",
+    "camoType": "Summer",
+    "availableBattleTypes": ["Standard Battle"]
+  },
+  {
+    "id": 41,
+    "name": "Widepark",
+    "path": "./maps/widepark.jpg",
+    "camoType": "Desert",
+    "availableBattleTypes": ["Standard Battle"]
+  }
+]
