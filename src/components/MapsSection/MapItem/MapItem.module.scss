@@ -2,10 +2,46 @@
   max-width: 320px;
   width: 100%;
   padding: 10px;
-
   cursor: pointer;
 
   &:hover {
     box-shadow: 0 0 0 1px var(--main-orange);
+
+    .divTitle {
+      letter-spacing: 1px;
+    }
+  }
+
+  .divTitle {
+    margin-bottom: 10px;
+
+    .title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+
+  .divContent {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+
+    .divCamoType {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .divBattleTypes {
+      .spanBattleTypes {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        span {
+          margin-bottom: 1px;
+        }
+      }
+    }
   }
 }

@@ -17,26 +17,26 @@ function MapItem({ item }: MapItemProps) {
   const { id, name, path, camoType, availableBattleTypes } = item;
   return (
     <div className={styles.MapItem}>
-      <div>
-        <p>
+      <div className={styles.divTitle}>
+        <span className={styles.title}>
           {id + 1}. {name}
-        </p>
+        </span>
       </div>
       <div>
         <img src={path} />
       </div>
-      <div>
-        <div>
-          <span>Camo type:</span>
+      <div className={styles.divContent}>
+        <div className={styles.divCamoType}>
+          <span>Camo type: </span>
           <span>{camoType}</span>
         </div>
-        <div>
-          <span>Available battle types:</span>
-          <div>
+        <div className={styles.divBattleTypes}>
+          <div>Available battle types: </div>
+          <span className={styles.spanBattleTypes}>
             {availableBattleTypes.map((text) => (
               <span>{text}</span>
             ))}
-          </div>
+          </span>
         </div>
       </div>
     </div>
