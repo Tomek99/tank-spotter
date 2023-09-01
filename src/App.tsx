@@ -8,8 +8,16 @@ import {
   SpotsSection,
   ContactSection,
 } from "./components/index";
+import BlurScreen from "./components/BlurScreen/BlurScreen";
+import { useState } from "react";
 
 function App() {
+  const [blurScreen, setBlurScreen] = useState<boolean>(false);
+
+  function handleBlurScreen() {
+    setBlurScreen(!blurScreen);
+  }
+
   return (
     <>
       <NavigationBar />
@@ -20,6 +28,7 @@ function App() {
           <Route path="recomended-spots" element={<SpotsSection />} />
           <Route path="contact" element={<ContactSection />} />
         </Routes>
+        {blurScreen ? <BlurScreen handleBlurScreen={handleBlurScreen} /> : null}
       </section>
       <Footer />
     </>

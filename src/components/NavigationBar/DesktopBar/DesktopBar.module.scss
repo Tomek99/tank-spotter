@@ -1,0 +1,11 @@
+.DesktopBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-transform: capitalize;
+}
+@media (max-width: 700px) {
+  .DesktopBar {
+    display: none !important;
+  }
+}

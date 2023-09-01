@@ -5,12 +5,7 @@
   top: 0;
   background-color: var(--main-grey);
   padding: 5px 0;
-  margin-bottom: 10px;
-
-  .logoImg {
-    max-width: 100px;
-    width: 100%;
-  }
+  margin-bottom: 20px;
 
   .navElements {
     display: flex;
@@ -19,11 +14,9 @@
     max-width: 1600px;
     width: 100%;
 
-    .divCenter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      text-transform: capitalize;
+    .logoImg {
+      max-width: 100px;
+      width: 100%;
     }
 
     .divRight {
@@ -33,7 +26,12 @@
 }
 
 @media (max-width: 700px) {
-  .divCenter {
-    display: none !important;
+  .navElements {
+    justify-content: flex-end !important;
+
+    .logoImg {
+      max-width: 60px !important;
+      width: 100%;
+    }
   }
 }
