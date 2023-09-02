@@ -9,7 +9,7 @@
 
   .btnCloseDiv {
     background-color: var(--main-grey);
-    height: 61px;
+    height: 98px;
     width: 100%;
     text-align: right;
     padding: 10px;
@@ -27,4 +27,16 @@
 
 .MobileBar.active {
   left: 0;
+}
+
+@media (max-width: 700px) {
+  .btnCloseDiv {
+    height: 61px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .MobileBar {
+    width: 100vw;
+  }
 }

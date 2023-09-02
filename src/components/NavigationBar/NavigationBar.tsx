@@ -12,7 +12,7 @@ import { NavigationBarContext } from "../../contexts/NavigationBarContext";
 function NavigationBar() {
   const [blurScreen, setBlurScreen] = useState<boolean>(false);
   function handleBlurScreen(): void {
-    setBlurScreen(!blurScreen);
+    setBlurScreen(false);
     setActiveMobileNav(false);
   }
 
