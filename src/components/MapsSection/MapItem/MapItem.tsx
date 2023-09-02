@@ -33,8 +33,8 @@ function MapItem({ item }: MapItemProps) {
         <div className={styles.divBattleTypes}>
           <div>Available battle types: </div>
           <span className={styles.spanBattleTypes}>
-            {availableBattleTypes.map((text) => (
-              <span>{text}</span>
+            {availableBattleTypes.map((text, i) => (
+              <span key={i}>{text}</span>
             ))}
           </span>
         </div>

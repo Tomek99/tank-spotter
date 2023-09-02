@@ -1,21 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavLinkElement from "../../NavLinkElement/NavLinkElements";
 import styles from "./DesktopBar.module.scss";
+import { NavigationBarContext } from "../../../contexts/NavigationBarContext";
 
-interface Item {
-  text: string;
-  path: string;
-}
+function DesktopBar() {
+  const { navigationData, handleBlurScreen } = useContext(NavigationBarContext);
 
-interface handleDesktopBarProps {
-  navigationData: Item[];
-}
-
-function DesktopBar({ navigationData }: handleDesktopBarProps) {
   return (
     <div className={styles.DesktopBar}>
       {navigationData.map((item, i) => (
-        <NavLinkElement item={item} key={i} />
+        <NavLinkElement item={item} key={i} handleBtn={handleBlurScreen} />
       ))}
     </div>
   );

@@ -8,13 +8,15 @@ interface Item {
 
 interface LinkElementProps {
   item: Item;
+  handleBtn: () => void;
 }
 
-function NavLinkElement({ item }: LinkElementProps) {
+function NavLinkElement({ item, handleBtn }: LinkElementProps) {
   const { path, text } = item;
   return (
     <NavLink
       to={path}
+      onClick={handleBtn}
       className={({ isActive, isPending }) =>
         isPending
           ? "pending"

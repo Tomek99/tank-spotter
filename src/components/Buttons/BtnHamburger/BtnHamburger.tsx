@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./BtnHamburger.module.scss";
 
-interface handleBtnProps {
-  isActive: boolean;
-  handleBtn: () => void;
-}
+import { NavigationBarContext } from "../../../contexts/NavigationBarContext";
 
-function BtnHamburger({ isActive, handleBtn }: handleBtnProps) {
+function BtnHamburger() {
+  const { activeMobileNav, handleBtnMobileNav } =
+    useContext(NavigationBarContext);
   return (
     <div
       className={
-        isActive
+        activeMobileNav
           ? `${styles.BtnHamburger} ${styles.active}`
           : styles.BtnHamburger
       }
-      onClick={handleBtn}
+      onClick={handleBtnMobileNav}
     >
       <span className={styles.bar}></span>
       <span className={styles.bar}></span>

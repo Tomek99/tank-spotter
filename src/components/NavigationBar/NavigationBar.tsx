@@ -6,43 +6,51 @@ import { Link } from "react-router-dom";
 import BtnHamburger from "../Buttons/BtnHamburger/BtnHamburger";
 import MobileBar from "./MobileBar/MobileBar";
 import DesktopBar from "./DesktopBar/DesktopBar";
-
-type ActiveType = boolean;
+import BlurScreen from "../BlurScreen/BlurScreen";
+import { NavigationBarContext } from "../../contexts/NavigationBarContext";
 
 function NavigationBar() {
-  const [active, setActive] = useState<ActiveType>(false);
-
-  function handleBtn(): void {
-    setActive(!active);
+  const [blurScreen, setBlurScreen] = useState<boolean>(false);
+  function handleBlurScreen(): void {
+    setBlurScreen(!blurScreen);
+    setActiveMobileNav(false);
   }
 
+  /* --------------------------------- */
+  const [activeMobileNav, setActiveMobileNav] = useState<boolean>(false);
+  function handleBtnMobileNav(): void {
+    setActiveMobileNav(!activeMobileNav);
+    setBlurScreen(!blurScreen);
+  }
   return (
-    <div className={styles.NavigationBar}>
-      <BtnHamburger isActive={active} handleBtn={handleBtn} />
+    <NavigationBarContext.Provider
+      value={{
+        blurScreen,
+        activeMobileNav,
+        navigationData,
+        handleBlurScreen,
+        handleBtnMobileNav,
+      }}
+    >
+      <div className={styles.NavigationBar}>
+        <BtnHamburger />
 
-      <ul className={styles.navElements}>
-        <Link to="/">
-          {" "}
-          <img src="./logo.png" className={styles.logoImg} />
-        </Link>
+        <ul className={styles.navElements}>
+          <Link to="/">
+            {" "}
+            <img src="./logo.png" className={styles.logoImg} />
+          </Link>
 
-        {/* <div className={styles.divCenter}>
-          {navigationData.map((item, i) => (
-            <NavLinkElement item={item} key={i} />
-          ))}
-        </div> */}
-        <DesktopBar navigationData={navigationData} />
+          <DesktopBar />
 
-        <div className={styles.divRight}>
-          <FaRegUser size={35} />
-        </div>
-      </ul>
-      <MobileBar
-        isActive={active}
-        navigationData={navigationData}
-        handleBtn={handleBtn}
-      />
-    </div>
+          <div className={styles.divRight}>
+            <FaRegUser size={35} />
+          </div>
+        </ul>
+        <MobileBar />
+        {blurScreen ? <BlurScreen /> : null}
+      </div>
+    </NavigationBarContext.Provider>
   );
 }
 

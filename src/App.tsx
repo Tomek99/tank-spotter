@@ -8,18 +8,12 @@ import {
   SpotsSection,
   ContactSection,
 } from "./components/index";
-import BlurScreen from "./components/BlurScreen/BlurScreen";
-import { useState } from "react";
+
+import { GlobalContext } from "./contexts/GlobalContext";
 
 function App() {
-  const [blurScreen, setBlurScreen] = useState<boolean>(false);
-
-  function handleBlurScreen() {
-    setBlurScreen(!blurScreen);
-  }
-
   return (
-    <>
+    <GlobalContext.Provider value={{}}>
       <NavigationBar />
       <section className="centerSection">
         <Routes>
@@ -28,10 +22,9 @@ function App() {
           <Route path="recomended-spots" element={<SpotsSection />} />
           <Route path="contact" element={<ContactSection />} />
         </Routes>
-        {blurScreen ? <BlurScreen handleBlurScreen={handleBlurScreen} /> : null}
       </section>
       <Footer />
-    </>
+    </GlobalContext.Provider>
   );
 }
 
