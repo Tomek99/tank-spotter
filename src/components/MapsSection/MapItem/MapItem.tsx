@@ -11,12 +11,20 @@ interface Item {
 
 interface MapItemProps {
   item: Item;
+  handleMap: () => void;
+  selectMap: (item: Item) => void;
 }
 
-function MapItem({ item }: MapItemProps) {
+function MapItem({ item, handleMap, selectMap }: MapItemProps) {
   const { id, name, path, camoType, availableBattleTypes } = item;
   return (
-    <div className={styles.MapItem}>
+    <div
+      className={styles.MapItem}
+      onClick={() => {
+        handleMap();
+        selectMap(item);
+      }}
+    >
       <div className={styles.divTitle}>
         <span className={styles.title}>
           {id + 1}. {name}

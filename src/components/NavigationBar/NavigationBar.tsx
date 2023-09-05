@@ -28,7 +28,6 @@ function NavigationBar() {
         blurScreen,
         activeMobileNav,
         navigationData,
-        handleBlurScreen,
         handleBtnMobileNav,
       }}
     >
@@ -48,7 +47,7 @@ function NavigationBar() {
           </div>
         </ul>
         <MobileBar />
-        {blurScreen ? <BlurScreen /> : null}
+        {blurScreen ? <BlurScreen handleBlurScreen={handleBlurScreen} /> : null}
       </div>
     </NavigationBarContext.Provider>
   );

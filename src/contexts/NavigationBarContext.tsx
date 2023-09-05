@@ -10,7 +10,6 @@ export interface NavBarContextInterface {
   activeMobileNav: boolean;
   navigationData: navData[];
   handleBtnMobileNav: () => void;
-  handleBlurScreen: () => void;
 }
 
 export const NavigationBarContext = createContext<NavBarContextInterface>({
@@ -18,5 +17,4 @@ export const NavigationBarContext = createContext<NavBarContextInterface>({
   activeMobileNav: false,
   navigationData: [],
   handleBtnMobileNav: () => {},
-  handleBlurScreen: () => {},
 });

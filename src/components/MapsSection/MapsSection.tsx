@@ -3,6 +3,8 @@ import mapsData from "../../data/maps.json";
 import MapItem from "./MapItem/MapItem";
 import styles from "./MapsSection.module.scss";
 import Searcher from "./Searcher/Searcher";
+import MapConfiguration from "../MapConfiguration/MapCongifuration";
+import BlurScreen from "../BlurScreen/BlurScreen";
 
 interface Item {
   id: number;
@@ -30,6 +32,25 @@ function MapsSection() {
 
     setMaps(updatedList);
   }
+
+  const [activeMap, setActiveMap] = useState<boolean>(false);
+
+  function handleMap(): void {
+    setActiveMap(!activeMap);
+  }
+
+  const [selectedMap, setSelectedMap] = useState<Item>({
+    id: 0,
+    name: "",
+    path: "",
+    camoType: "",
+    availableBattleTypes: [],
+  });
+
+  function selectMap(item: Item): void {
+    setSelectedMap(item);
+  }
+
   return (
     <div className={styles.MapsSection}>
       <div className={styles.findMapDiv}>
@@ -44,9 +65,20 @@ function MapsSection() {
       </div>
       <div className={styles.mapsDiv}>
         {maps.map((item, i) => (
-          <MapItem item={item} key={i} />
+          <MapItem
+            item={item}
+            key={i}
+            handleMap={handleMap}
+            selectMap={selectMap}
+          />
         ))}
       </div>
+      {activeMap ? (
+        <React.Fragment>
+          <MapConfiguration item={selectedMap} />
+          <BlurScreen handleBlurScreen={handleMap} />
+        </React.Fragment>
+      ) : null}
     </div>
   );
 }

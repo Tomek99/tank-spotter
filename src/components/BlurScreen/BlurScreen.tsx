@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./BlurScreen.module.scss";
 
-import { NavigationBarContext } from "../../contexts/NavigationBarContext";
+interface BlurScreenProps {
+  handleBlurScreen: () => void;
+}
 
-function BlurScreen() {
-  const { handleBlurScreen } = useContext(NavigationBarContext);
-
+function BlurScreen({ handleBlurScreen }: BlurScreenProps) {
   return <div className={styles.BlurScreen} onClick={handleBlurScreen}></div>;
 }
 
