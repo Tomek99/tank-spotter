@@ -1,0 +1,12 @@
+.BtnDeleteTank {
+  font-size: 18px;
+  background-color: rgb(182, 28, 28);
+  margin-left: 5px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(202, 13, 13);
+  }
+}

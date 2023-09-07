@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./MapConfiguration.module.scss";
 import BtnCancel from "../Buttons/BtnCancel/BtnCancel";
 import BtnConfirm from "../Buttons/BtnConfirm/BtnConfirm";
@@ -9,7 +8,8 @@ import TankDestroyer from "../Vehicles/TankDestroyer/TankDestroyer";
 import Artillery from "../Vehicles/Artillery/Artillery";
 import BtnDeleteTank from "../Buttons/BtnDeleteTank/BtnDeleteTank";
 import BtnClearMap from "../Buttons/BtnClearMap/BtnClearMap";
-import { useDrag } from "@use-gesture/react";
+import DragVehicle from "../DragVehicle/DragVehicle";
+import TextArea from "../TextArea/TextArea";
 
 interface Item {
   id: number;
@@ -23,20 +23,7 @@ interface MapConfigProps {
   item: Item;
 }
 
-interface Coordinate {
-  x: number;
-  y: number;
-}
-
 function MapConfiguration({ item }: MapConfigProps) {
-  const [logoPos, setLogoPos] = useState<Coordinate>({ x: 0, y: 0 });
-
-  const bindLogoPos = useDrag((params) => {
-    setLogoPos({
-      x: params.offset[0],
-      y: params.offset[1],
-    });
-  });
   return (
     <div className={styles.MapConfiguration}>
       <h1>{item.name}</h1>
@@ -55,16 +42,12 @@ function MapConfiguration({ item }: MapConfigProps) {
         </div>
       </div>
 
-      <div>
+      <div className={styles.divImgLayout}>
         <img src={item.path} />
+        <DragVehicle value={1} />
       </div>
-      <div
-        {...bindLogoPos()}
-        style={{ position: "relative", top: logoPos.y, left: logoPos.x }}
-      >
-        addition information:
-      </div>
-      <textarea />
+      <div>addition information:</div>
+      <TextArea />
       <div>
         <BtnConfirm />
         <BtnCancel />

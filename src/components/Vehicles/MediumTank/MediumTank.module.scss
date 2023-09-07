@@ -1,0 +1,13 @@
+.MediumTank {
+  display: flex;
+  gap: 1px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 3px;
+    height: 10px;
+    background-color: var(--main-white);
+    // transform: rotate(deg);
+  }
+}

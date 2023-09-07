@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./Artillery.module.scss";
 
 function Artillery() {
-  return <div>X</div>;
+  return <div className={styles.Artillery}></div>;
 }
 
 export default Artillery;
