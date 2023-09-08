@@ -1,8 +1,16 @@
 import React from "react";
 import styles from "./BtnClearMap.module.scss";
 
-function BtnClearMap() {
-  return <button className={styles.BtnClearMap}>Clear map</button>;
+interface BtnClearMapProps {
+  handleBtn: () => void;
+}
+
+function BtnClearMap({ handleBtn }: BtnClearMapProps) {
+  return (
+    <button className={styles.BtnClearMap} onClick={handleBtn}>
+      Clear map
+    </button>
+  );
 }
 
 export default BtnClearMap;

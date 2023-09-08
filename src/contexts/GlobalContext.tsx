@@ -1,10 +1,21 @@
 import { createContext } from "react";
 
-// export interface GlobalContext {
-//   blurScreen: boolean;
-//   handleBlurScreen: () => void;
-//   activeMobileNav: boolean;
-//   handleBtnMobileNav: () => void;
-// }
+interface Vehicle {
+  id: number;
+  x: number;
+  y: number;
+  sort: number;
+}
 
-export const GlobalContext = createContext({});
+interface SavedMapInterface {
+  vehicles: Vehicle[];
+  mapName: string;
+  name: string;
+  additionInformation: string;
+}
+
+export interface GlobalContext {
+  addMap: (item: SavedMapInterface) => void;
+}
+
+export const GlobalContext = createContext<GlobalContext>({ addMap: () => {} });

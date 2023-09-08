@@ -7,8 +7,15 @@ import TankDestroyer from "../Vehicles/TankDestroyer/TankDestroyer";
 import { useDrag } from "@use-gesture/react";
 import styles from "./DragVehicle.module.scss";
 
-interface DragElementProps {
-  value: number;
+interface Vehicle {
+  item: {
+    id: number;
+    x: number;
+    y: number;
+    sort: number;
+  };
+  settleMark: (id: number) => void;
+  updateCooridnates: (id: number, x: number, y: number) => void;
 }
 
 interface Coordinate {
@@ -16,7 +23,7 @@ interface Coordinate {
   y: number;
 }
 
-function DragVehicle({ value }: DragElementProps) {
+function DragVehicle({ item, settleMark, updateCooridnates }: Vehicle) {
   const [logoPos, setLogoPos] = useState<Coordinate>({ x: 0, y: 0 });
 
   const bindLogoPos = useDrag((params) => {
@@ -24,24 +31,32 @@ function DragVehicle({ value }: DragElementProps) {
       x: params.offset[0],
       y: params.offset[1],
     });
+
+    updateCooridnates(item.id, params.offset[0], params.offset[1]);
   });
   return (
     <div
       {...bindLogoPos()}
-      style={{ position: "relative", top: logoPos.y, left: logoPos.x }}
+      style={{
+        position: "absolute",
+        top: logoPos.y,
+        left: logoPos.x,
+        touchAction: "none",
+      }}
       className={styles.DragVehicle}
+      onClick={() => settleMark(item.id)}
     >
       {(() => {
-        switch (value) {
-          case 1:
+        switch (item.sort) {
+          case 0:
             return <Artillery />;
-          case 2:
+          case 1:
             return <HeavyTank />;
-          case 3:
+          case 2:
             return <MediumTank />;
-          case 4:
+          case 3:
             return <Scout />;
-          case 5:
+          case 4:
             return <TankDestroyer />;
           default:
             return null;

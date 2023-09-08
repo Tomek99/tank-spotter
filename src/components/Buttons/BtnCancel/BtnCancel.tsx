@@ -1,8 +1,16 @@
 import React from "react";
 import styles from "./BtnCancel.module.scss";
 
-function BtnCancel() {
-  return <button className={styles.BtnCancel}>Cancel</button>;
+interface BtnCancelProps {
+  handleBtn: () => void;
+}
+
+function BtnCancel({ handleBtn }: BtnCancelProps) {
+  return (
+    <button className={styles.BtnCancel} onClick={handleBtn}>
+      Cancel
+    </button>
+  );
 }
 
 export default BtnCancel;

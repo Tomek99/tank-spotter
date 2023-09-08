@@ -75,7 +75,7 @@ function MapsSection() {
       </div>
       {activeMap ? (
         <React.Fragment>
-          <MapConfiguration item={selectedMap} />
+          <MapConfiguration item={selectedMap} handleBlurScreen={handleMap} />
           <BlurScreen handleBlurScreen={handleMap} />
         </React.Fragment>
       ) : null}
