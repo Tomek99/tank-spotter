@@ -6,7 +6,7 @@ import {
   MapsSection,
   LocationsSection,
   SpotsSection,
-  ContactSection,
+  AboutSection,
 } from "./components/index";
 
 import { GlobalContext } from "./contexts/GlobalContext";
@@ -44,7 +44,7 @@ function App() {
             element={<LocationsSection savedMaps={savedMaps} />}
           />
           <Route path="recomended-spots" element={<SpotsSection />} />
-          <Route path="contact" element={<ContactSection />} />
+          <Route path="about" element={<AboutSection />} />
         </Routes>
       </section>
       <Footer />

@@ -2,5 +2,5 @@
   { "text": "maps", "path": "/" },
   { "text": "your locations", "path": "/your-location" },
   { "text": "recomended spots", "path": "/recomended-spots" },
-  { "text": "contact", "path": "/contact" }
+  { "text": "about", "path": "/about" }
 ]
