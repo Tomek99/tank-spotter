@@ -42,3 +42,18 @@ button,
 select {
   font: inherit;
 }
+::-webkit-scrollbar-thumb {
+  background: #ffb300;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--main-dark);
+}
