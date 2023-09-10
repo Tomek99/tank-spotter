@@ -24,9 +24,12 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a href="mailto: szybko872@gmail.com">
+          <a
+            href="mailto: tomaszskupien06@gmail.com
+"
+          >
             <AiOutlineMail />
-            <span>szybko872@gmail.com</span>
+            <span>tomaszskupien06@gmail.com</span>
           </a>
         </li>
         <li>
