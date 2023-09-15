@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./LocationsSection.module.scss";
+import SelectedSpots from "./SelectedSpots/SelectedSpots";
 
 interface Vehicle {
   id: number;
@@ -9,6 +10,7 @@ interface Vehicle {
 }
 
 interface SavedMapInterface {
+  idSavedMap: number;
   vehicles: Vehicle[];
   mapName: string;
   name: string;
@@ -23,7 +25,7 @@ function LocationsSection({ savedMaps }: LocationsSectionProps) {
   return (
     <div className={styles.LocationSection}>
       {savedMaps.length !== 0 ? (
-        savedMaps.map((item, i) => <p key={i}>{item.name}</p>)
+        savedMaps.map((item, i) => <SelectedSpots item={item} key={i} />)
       ) : (
         <p>No map added </p>
       )}

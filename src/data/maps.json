@@ -34,7 +34,7 @@
   {
     "id": 4,
     "name": "Empire's Border",
-    "path": "./maps/empire's border.jpg",
+    "path": "./maps/empiresborder.jpg",
     "camoType": "Summer",
     "availableBattleTypes": ["Standard Battle"]
   },
@@ -55,7 +55,7 @@
   {
     "id": 7,
     "name": "Fisherman's Bay",
-    "path": "./maps/fisherman's bay.jpg",
+    "path": "./maps/fishermansbay.jpg",
     "camoType": "Summer",
     "availableBattleTypes": ["Standard Battle"]
   },
@@ -152,7 +152,7 @@
   {
     "id": 19,
     "name": "Live oaks",
-    "path": "./maps/live oaks.jpg",
+    "path": "./maps/liveoaks.jpg",
     "camoType": "Summer",
     "availableBattleTypes": ["Standard Battle"]
   },
@@ -166,7 +166,7 @@
   {
     "id": 21,
     "name": "Mannerheim line",
-    "path": "./maps/mannerheim line.jpg",
+    "path": "./maps/mannerheimline.jpg",
     "camoType": "Winter",
     "availableBattleTypes": ["Attack/Defense"]
   },
@@ -191,7 +191,7 @@
   {
     "id": 24,
     "name": "Mountain Pass",
-    "path": "./maps/mountain pass.jpg",
+    "path": "./maps/mountainpass.jpg",
     "camoType": "Summer",
     "availableBattleTypes": ["Standard Battle"]
   },
@@ -280,7 +280,7 @@
   {
     "id": 36,
     "name": "Sand River",
-    "path": "./maps/sand river.jpg",
+    "path": "./maps/sandriver.jpg",
     "camoType": "Desert",
     "availableBattleTypes": [
       "Standard Battle",
@@ -291,14 +291,14 @@
   {
     "id": 37,
     "name": "Serence Coast",
-    "path": "./maps/serence coast.jpg",
+    "path": "./maps/serencecoast.jpg",
     "camoType": "Desert",
     "availableBattleTypes": ["Standard Battle"]
   },
   {
     "id": 38,
     "name": "Siegfried Line",
-    "path": "./maps/siegfried line.jpg",
+    "path": "./maps/siegfriedline.jpg",
     "camoType": "Summer",
     "availableBattleTypes": [
       "Standard Battle",

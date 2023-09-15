@@ -8,6 +8,7 @@ interface Vehicle {
 }
 
 interface SavedMapInterface {
+  idSavedMap: number;
   vehicles: Vehicle[];
   mapName: string;
   name: string;
@@ -16,6 +17,10 @@ interface SavedMapInterface {
 
 export interface GlobalContext {
   addMap: (item: SavedMapInterface) => void;
+  deleteMap: (id: number) => void;
 }
 
-export const GlobalContext = createContext<GlobalContext>({ addMap: () => {} });
+export const GlobalContext = createContext<GlobalContext>({
+  addMap: () => {},
+  deleteMap: () => {},
+});

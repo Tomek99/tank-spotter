@@ -20,6 +20,7 @@ interface Vehicle {
 }
 
 interface SavedMapInterface {
+  idSavedMap: number;
   vehicles: Vehicle[];
   mapName: string;
   name: string;
@@ -27,14 +28,36 @@ interface SavedMapInterface {
 }
 
 function App() {
-  const [savedMaps, setSavedMaps] = useState<SavedMapInterface[]>([]);
+  const [savedMaps, setSavedMaps] = useState<SavedMapInterface[]>(() => {
+    const storedValue = localStorage.getItem("savedMaps");
+    if (storedValue !== null) return JSON.parse(storedValue);
+    else return [];
+  });
 
   function addMap(item: SavedMapInterface): void {
-    setSavedMaps([...savedMaps, item]);
+    const newSavedMaps = [...savedMaps, item];
+    setSavedMaps(newSavedMaps);
+
+    try {
+      localStorage.setItem("savedMaps", JSON.stringify(newSavedMaps));
+    } catch (error) {
+      console.error("Error saving data to local storage:", error);
+    }
+  }
+
+  function deleteMap(id: number): void {
+    const newSavedMaps = savedMaps.filter((obj) => obj.idSavedMap !== id);
+    setSavedMaps(newSavedMaps);
+
+    try {
+      localStorage.setItem("savedMaps", JSON.stringify(newSavedMaps));
+    } catch (error) {
+      console.error("Error saving data to local storage:", error);
+    }
   }
 
   return (
-    <GlobalContext.Provider value={{ addMap }}>
+    <GlobalContext.Provider value={{ addMap, deleteMap }}>
       <NavigationBar />
       <section className="centerSection">
         <Routes>

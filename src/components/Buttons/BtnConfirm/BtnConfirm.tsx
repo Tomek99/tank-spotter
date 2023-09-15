@@ -16,6 +16,7 @@ interface Vehicle {
 }
 
 interface SavedMapInterface {
+  idSavedMap: number;
   vehicles: Vehicle[];
   mapName: string;
   name: string;
@@ -27,6 +28,7 @@ interface BtnConfirmProps {
   item: Item;
   vehicles: Vehicle[];
   handleBlurScreen: () => void;
+  message: string;
 }
 
 function BtnConfirm({
@@ -34,12 +36,14 @@ function BtnConfirm({
   item,
   vehicles,
   handleBlurScreen,
+  message,
 }: BtnConfirmProps) {
   const savedMap: SavedMapInterface = {
+    idSavedMap: Math.floor(Math.random() * 999999),
     vehicles: vehicles,
     name: item.name,
     mapName: item.path,
-    additionInformation: "bla bla bla",
+    additionInformation: message,
   };
   return (
     <button

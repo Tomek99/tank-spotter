@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./NavigationBar.module.scss";
 import navigationData from "../../data/navigationElements.json";
-import { FaRegUser } from "react-icons/fa";
+// import { FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import BtnHamburger from "../Buttons/BtnHamburger/BtnHamburger";
 import MobileBar from "./MobileBar/MobileBar";
@@ -42,9 +42,7 @@ function NavigationBar() {
 
           <DesktopBar />
 
-          <div className={styles.divRight}>
-            <FaRegUser size={35} />
-          </div>
+          <div className={styles.divRight}>{/* <FaRegUser size={35} /> */}</div>
         </ul>
         <MobileBar />
         {blurScreen ? <BlurScreen handleBlurScreen={handleBlurScreen} /> : null}

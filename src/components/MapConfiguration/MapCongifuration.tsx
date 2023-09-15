@@ -67,9 +67,14 @@ function MapConfiguration({ item, handleBlurScreen }: MapConfigProps) {
     setIdMark(id);
   }
 
+  const [message, setMessage] = useState<string>("");
+
+  function handleMessage(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    setMessage(e.target.value);
+  }
+
   return (
     <div className={styles.MapConfiguration}>
-      <h1>{item.name}</h1>
       <div className={styles.divContent}>
         <div className={styles.divTanks}>
           <span onClick={() => addVehicle(1)}>
@@ -90,7 +95,7 @@ function MapConfiguration({ item, handleBlurScreen }: MapConfigProps) {
         </div>
 
         <div className={styles.divBtns}>
-          {/* <BtnDeleteTank handleBtn={deleteMark} id={idMark} /> */}
+          <BtnDeleteTank handleBtn={deleteMark} id={idMark} />
           <BtnClearMap handleBtn={clearMap} />
         </div>
       </div>
@@ -111,13 +116,14 @@ function MapConfiguration({ item, handleBlurScreen }: MapConfigProps) {
           : null}
       </div>
       <div>addition information:</div>
-      <TextArea />
+      <TextArea message={message} handleMessage={handleMessage} />
       <div>
         <BtnConfirm
           addMap={addMap}
           item={item}
           vehicles={vehicles}
           handleBlurScreen={handleBlurScreen}
+          message={message}
         />
         <BtnCancel handleBtn={handleBlurScreen} />
       </div>
