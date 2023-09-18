@@ -56,8 +56,29 @@ function App() {
     }
   }
 
+  function updateMap(updatedMap: SavedMapInterface): void {
+    const maps = savedMaps.map((item) => ({ ...item }));
+
+    const foundIndex = maps.findIndex(
+      (item) => item.idSavedMap === updatedMap.idSavedMap
+    );
+
+    if (foundIndex !== -1) {
+      maps.splice(foundIndex, 1, updatedMap);
+      setSavedMaps(maps);
+
+      try {
+        localStorage.setItem("savedMaps", JSON.stringify(maps));
+      } catch (error) {
+        console.error("Error saving data to local storage:", error);
+      }
+    } else {
+      console.log(`Object with ID ${foundIndex} not found.`);
+    }
+  }
+
   return (
-    <GlobalContext.Provider value={{ addMap, deleteMap }}>
+    <GlobalContext.Provider value={{ addMap, deleteMap, updateMap }}>
       <NavigationBar />
       <section className="centerSection">
         <Routes>

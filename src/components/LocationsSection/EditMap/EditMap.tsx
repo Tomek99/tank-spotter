@@ -1,30 +1,16 @@
-import React, { useState, useContext } from "react";
-import styles from "./MapConfiguration.module.scss";
-import BtnCancel from "../Buttons/BtnCancel/BtnCancel";
-import BtnConfirm from "../Buttons/BtnConfirm/BtnConfirm";
-import HeavyTank from "../Vehicles/HeavyTank/HeavyTank";
-import MediumTank from "../Vehicles/MediumTank/MediumTank";
-import Scout from "../Vehicles/Scout/Scout";
-import TankDestroyer from "../Vehicles/TankDestroyer/TankDestroyer";
-import Artillery from "../Vehicles/Artillery/Artillery";
-import BtnDeleteTank from "../Buttons/BtnDeleteTank/BtnDeleteTank";
-import BtnClearMap from "../Buttons/BtnClearMap/BtnClearMap";
-import DragVehicle from "../DragVehicle/DragVehicle";
-import TextArea from "../TextArea/TextArea";
-import { GlobalContext } from "../../contexts/GlobalContext";
-
-interface Item {
-  id: number;
-  name: string;
-  path: string;
-  camoType: string;
-  availableBattleTypes: string[];
-}
-
-interface MapConfigProps {
-  item: Item;
-  handleBlurScreen: () => void;
-}
+import React, { useState } from "react";
+import styles from "./EditMap.module.scss";
+import HeavyTank from "../../Vehicles/HeavyTank/HeavyTank";
+import BtnClearMap from "../../Buttons/BtnClearMap/BtnClearMap";
+import BtnDeleteTank from "../../Buttons/BtnDeleteTank/BtnDeleteTank";
+import TextArea from "../../TextArea/TextArea";
+import Artillery from "../../Vehicles/Artillery/Artillery";
+import MediumTank from "../../Vehicles/MediumTank/MediumTank";
+import Scout from "../../Vehicles/Scout/Scout";
+import TankDestroyer from "../../Vehicles/TankDestroyer/TankDestroyer";
+import EditVehicle from "./EditVehicle/EditVehicle";
+import BtnCancel from "../../Buttons/BtnCancel/BtnCancel";
+import BtnUpdateData from "../../Buttons/BtnUpdateData/BtnUpdateData";
 
 interface Vehicle {
   id: number;
@@ -33,11 +19,23 @@ interface Vehicle {
   sort: number;
 }
 
-function MapConfiguration({ item, handleBlurScreen }: MapConfigProps) {
-  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
-  console.log(vehicles);
+interface SavedMapInterface {
+  idSavedMap: number;
+  vehicles: Vehicle[];
+  mapName: string;
+  name: string;
+  additionInformation: string;
+}
 
-  const { addMap } = useContext(GlobalContext);
+interface LocationsSectionProps {
+  item: SavedMapInterface;
+  handleBlurScreen: () => void;
+}
+
+function EditMap({ item, handleBlurScreen }: LocationsSectionProps) {
+  const [vehicles, setVehicles] = useState<Vehicle[]>(
+    item.vehicles.map((item) => ({ ...item }))
+  );
 
   function addVehicle(value: number): void {
     const generateId = Math.floor(Math.random() * 999999);
@@ -68,14 +66,14 @@ function MapConfiguration({ item, handleBlurScreen }: MapConfigProps) {
     setIdMark(id);
   }
 
-  const [message, setMessage] = useState<string>("");
+  const [message, setMessage] = useState<string>(item.additionInformation);
 
   function handleMessage(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setMessage(e.target.value);
   }
-
   return (
-    <div className={styles.MapConfiguration}>
+    <div className={styles.EditMap}>
+      {" "}
       <div className={styles.divContent}>
         <div className={styles.divTanks}>
           <span onClick={() => addVehicle(1)}>
@@ -100,14 +98,13 @@ function MapConfiguration({ item, handleBlurScreen }: MapConfigProps) {
           <BtnClearMap handleBtn={clearMap} />
         </div>
       </div>
-
       <div
         className={styles.divLayout}
-        style={{ backgroundImage: `url(${item.path})` }}
+        style={{ backgroundImage: `url(${item.mapName})` }}
       >
         {vehicles.length !== 0
           ? vehicles.map((item, i) => (
-              <DragVehicle
+              <EditVehicle
                 key={i}
                 item={item}
                 settleMark={settleMark}
@@ -119,17 +116,17 @@ function MapConfiguration({ item, handleBlurScreen }: MapConfigProps) {
       <div>addition information:</div>
       <TextArea message={message} handleMessage={handleMessage} />
       <div>
-        <BtnConfirm
-          addMap={addMap}
+        <BtnUpdateData
           item={item}
           vehicles={vehicles}
           handleBlurScreen={handleBlurScreen}
           message={message}
         />
+
         <BtnCancel handleBtn={handleBlurScreen} />
       </div>
     </div>
   );
 }
 
-export default MapConfiguration;
+export default EditMap;

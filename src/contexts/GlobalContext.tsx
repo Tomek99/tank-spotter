@@ -18,9 +18,11 @@ interface SavedMapInterface {
 export interface GlobalContext {
   addMap: (item: SavedMapInterface) => void;
   deleteMap: (id: number) => void;
+  updateMap: (updatedMap: SavedMapInterface) => void;
 }
 
 export const GlobalContext = createContext<GlobalContext>({
   addMap: () => {},
   deleteMap: () => {},
+  updateMap: () => {},
 });

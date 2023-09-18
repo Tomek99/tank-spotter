@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./SelectedSpots.module.scss";
 import Spot from "./Spot/Spot";
 import BtnDefault from "../../Buttons/BtnDefault/BtnDefault";
 import { GlobalContext } from "../../../contexts/GlobalContext";
+import BlurScreen from "../../BlurScreen/BlurScreen";
+import EditMap from "../EditMap/EditMap";
 
 interface Vehicle {
   id: number;
@@ -26,9 +28,12 @@ interface LocationsSectionProps {
 function SelectedSpots({ item }: LocationsSectionProps) {
   const { deleteMap } = useContext(GlobalContext);
 
-  {
-    item.vehicles[0].id;
+  const [blurScreen, setBlurScreen] = useState<boolean>(false);
+
+  function handleBlurScreen() {
+    setBlurScreen(!blurScreen);
   }
+
   return (
     <div className={styles.SelectedSpots}>
       <div className={styles.divContent}>
@@ -36,7 +41,7 @@ function SelectedSpots({ item }: LocationsSectionProps) {
         <div className={styles.divBtn}>
           <BtnDefault
             text={"Edit"}
-            handleBtn={deleteMap}
+            handleBtn={handleBlurScreen}
             id={item.idSavedMap}
           />
           <BtnDefault
@@ -59,6 +64,14 @@ function SelectedSpots({ item }: LocationsSectionProps) {
           <h2>Addition information:</h2>
           <p>{item.additionInformation}</p>
         </div>
+      ) : null}
+
+      {/* <MapConfiguration /> */}
+      {blurScreen ? (
+        <React.Fragment>
+          <EditMap item={item} handleBlurScreen={handleBlurScreen} />
+          <BlurScreen handleBlurScreen={handleBlurScreen} />
+        </React.Fragment>
       ) : null}
     </div>
   );

@@ -25,7 +25,9 @@ function LocationsSection({ savedMaps }: LocationsSectionProps) {
   return (
     <div className={styles.LocationSection}>
       {savedMaps.length !== 0 ? (
-        savedMaps.map((item, i) => <SelectedSpots item={item} key={i} />)
+        [...savedMaps]
+          .reverse()
+          .map((item, i) => <SelectedSpots item={item} key={i} />)
       ) : (
         <p>No map added </p>
       )}
