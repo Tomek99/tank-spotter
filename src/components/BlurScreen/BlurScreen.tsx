@@ -6,7 +6,13 @@ interface BlurScreenProps {
 }
 
 function BlurScreen({ handleBlurScreen }: BlurScreenProps) {
-  return <div className={styles.BlurScreen} onClick={handleBlurScreen}></div>;
+  return (
+    <div
+      className={styles.BlurScreen}
+      onClick={handleBlurScreen}
+      data-testid="blurScreenID"
+    ></div>
+  );
 }
 
 export default BlurScreen;

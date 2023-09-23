@@ -8,7 +8,12 @@ interface BtnDeleteTankProps {
 
 function BtnDeleteTank({ id, handleBtn }: BtnDeleteTankProps) {
   return (
-    <button className={styles.BtnDeleteTank} onClick={() => handleBtn(id)}>
+    <button
+      type="button"
+      className={styles.BtnDeleteTank}
+      onClick={() => handleBtn(id)}
+      disabled
+    >
       Delete mark
     </button>
   );

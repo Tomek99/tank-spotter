@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BlurScreen component 1`] = `
+<div>
+  <div
+    class="BlurScreen"
+    data-testid="blurScreenID"
+  />
+</div>
+`;

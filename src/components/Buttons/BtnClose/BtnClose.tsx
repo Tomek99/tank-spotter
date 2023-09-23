@@ -8,7 +8,11 @@ interface handleBtnActive {
 
 function BtnClose({ handleBtn }: handleBtnActive) {
   return (
-    <button className={styles.BtnClose} onClick={handleBtn}>
+    <button
+      className={styles.BtnClose}
+      onClick={handleBtn}
+      data-testid="btnClose"
+    >
       <GrClose size={30} />
     </button>
   );
