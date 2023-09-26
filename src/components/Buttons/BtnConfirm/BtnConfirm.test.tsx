@@ -2,24 +2,9 @@ import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import BtnConfirm from "./BtnConfirm";
 
-interface Item {
-  id: number;
-  name: string;
-  path: string;
-  camoType: string;
-  availableBattleTypes: string[];
-}
+const vehicles = [{ id: 0, x: 25, y: 25, sort: 0 }];
 
-interface Vehicle {
-  id: number;
-  x: number;
-  y: number;
-  sort: number;
-}
-
-const vehicles: Vehicle[] = [];
-
-const item: Item = {
+const item = {
   id: 24,
   name: "test",
   path: "test",

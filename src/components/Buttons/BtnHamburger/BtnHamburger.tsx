@@ -14,6 +14,7 @@ function BtnHamburger() {
           : styles.BtnHamburger
       }
       onClick={handleBtnMobileNav}
+      data-testid="btnHamburger"
     >
       <span className={styles.bar}></span>
       <span className={styles.bar}></span>
