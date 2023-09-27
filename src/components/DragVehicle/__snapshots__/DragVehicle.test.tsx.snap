@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DragVehicle component 1`] = `
+<div>
+  <div
+    class="DragVehicle"
+    style="position: absolute; top: 0px; left: 0px;"
+  >
+    <div
+      class="Artillery"
+    />
+  </div>
+</div>
+`;
